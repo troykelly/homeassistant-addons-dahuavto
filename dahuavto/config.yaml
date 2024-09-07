@@ -12,8 +12,8 @@ arch:
   - i386
 startup: services
 services:
-  mqtt: want
-boot: auto
+  - mqtt: want
+# boot: auto
 init: false
 options:
   intercom:
@@ -37,7 +37,7 @@ schema:
     port: "int?"
     username: "str?"
     password: "str?"
-# image: "ghcr.io/troykelly/{arch}-addon-dahuavto"
+image: "ghcr.io/troykelly/{arch}-addon-dahuavto"
 ports:
   9563/tcp: 9563
 ports_description:
