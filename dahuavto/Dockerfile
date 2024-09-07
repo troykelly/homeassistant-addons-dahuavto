@@ -10,11 +10,11 @@ RUN \
     curl -sSLf -o /usr/bin/tempio \
     "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
-RUN apk add --no-cache --update python3 && \
+RUN apk add --no-cache --update python3 python3-pip && \
 apk add --no-cache --virtual .build-dependencies git
 
 RUN git clone https://gitlab.com/elad.bar/DahuaVTO2MQTT.git --branch ${DAHUA_BRANCH} --depth 1 /app && \
-pip install -r /app/requirements.txt && \
+pip3 install -r /app/requirements.txt && \
 chmod +x /app/DahuaVTO.py && \
 echo "{ \"version\": \"$(date +'%Y.%m.%d').$(( $(date +"%s") - $(date -d "$today 0" "+%s") ))\" }" > /app/data/version.json && \
 apk del .build-dependencies
