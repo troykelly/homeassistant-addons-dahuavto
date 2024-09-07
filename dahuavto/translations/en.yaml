@@ -1,0 +1,31 @@
+configuration:
+  intercom:
+    name: Intercom
+    description: The settings or the Dahua VTO intercom system
+  intercom.host:
+    name: Itercom Host
+    description: The hostname or IP address of the Dahua VTO system
+  intercom.username:
+    name: Intercom Username
+    description: The username for the Dahua VTO system
+  intercom.password:
+    name: Intercom Password
+    description: The password for the Dahua VTO system
+  mqtt:
+    name: MQTT Broker
+    description: Connection details for the MQTT broker
+  mqtt.prefix:
+    name: MQTT Prefix
+    description: The prefeix for events from this Dahua VTO system
+  mqtt.host:
+    name: MQTT Host
+    description: The hostname or IP address of the MQTT broker
+  mqtt.port:
+    name: MQTT Port
+    description: The port number of the MQTT broker
+  mqtt.username:
+    name: MQTT Username
+    description: The username for the MQTT broker
+  mqtt.password:
+    name: MQTT Password
+    description: The password for the MQTT broker

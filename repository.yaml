@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Dahua VTO to MQTT Gateway
+url: "https://github.com/troykelly/homeassistant-addons-dahuavto"
+maintainer: Troy Kelly <troy@troykelly.com>
