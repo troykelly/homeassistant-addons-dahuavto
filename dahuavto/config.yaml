@@ -1,0 +1,44 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Dahua VTO to MQTT
+version: "1.1.0"
+slug: dahua_mqtt
+description: Listens to events from Dahua VTO unit and publishes them via MQTT Message
+url: "https://github.com/troykelly/homeassistant-addons-dahuavto/tree/main/dahuavto"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: services
+services:
+  mqtt: want
+boot: auto
+init: false
+options:
+  intercom:
+    host: "192.168.1.110"
+    username: "admin"
+    password: "admin"
+  mqtt:
+    prefix: "DahuaVTO"
+    host: "core-mosquitto"
+    port: "1883"
+    username: "homeassistant"
+    password: "homeassistant"
+schema:
+  intercom:
+    host: "str?"
+    username: "str?"
+    password: "str?"
+  mqtt:
+    prefix: "str?"
+    host: "str?"
+    port: "int?"
+    username: "str?"
+    password: "str?"
+# image: "ghcr.io/troykelly/{arch}-addon-dahuavto"
+ports:
+  9563/tcp: 9563
+ports_description:
+  9563/tcp: Exporter
