@@ -12,8 +12,8 @@ arch:
   - i386
 startup: services
 services:
-  mqtt: want
-boot: auto
+  - mqtt: want
+# boot: auto
 init: false
 options:
   intercom:
